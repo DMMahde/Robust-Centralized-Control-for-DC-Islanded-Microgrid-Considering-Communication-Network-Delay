@@ -1,21 +1,8 @@
 # Robust Centralized Control for DC Islanded Microgrid Considering Communication Network Delay
-[Transaction of the Institute of Measurement and Control, Sage Journals, *November 25, 2019*](https://doi.org/10.1177/0142331219884804)
+[IEEE Access, *Vol: 9*, *April 23, 2020*]([https://doi.org/10.1177/0142331219884804](https://doi.org/10.1109/ACCESS.2020.2989777))
 
 ## Abstract
-The integration of renewable energy resources to DC microgrid has captured the attention of the researchers in recent years. 
-One of the active field of application of DC distribution is the islanded DC microgrid (DC ImG). 
-The DC ImG present numerous challenges to researchers. Among many challenges, the regulation of voltage and stability of the system is indispensable to efficient operation. 
-The voltage stability problem becomes more prominent when the system is exposed to disturbances and possess uncertainties in parameters. 
-However, challenges can be overcome by skilful design of a robust controller for the system. 
-Therefore, in this paper, an output-feedback based centralized robust control scheme is proposed. 
-The proposed controller is designed to maintain good control performance in the presence of parametric uncertainties and exogenous disturbances. 
-The uncertainties of the DC microgrid is modelled as a linear time-varying state-space system. 
-The upper and the lower bounds of the time-varying parameters are determined by a Lebesque-measurable matrix. 
-To attenuate the exogenous disturbances of the system $H_\infty$ based output-feedback controller is designed. 
-The system stability is assured by the Lyapunov function candidate. The output-feedback controller needs only the voltage measurement; 
-therefore, it requires less communication bandwidth as compared to the state-feedback. 
-To obtain the controller parameters linear matrix inequality constraints are formulated and solved. 
-The performance of the proposed controller is verified via simulations and compared with the existing schemes.
+In recent years, the application of renewable energy resources (RES) with DC output has increased, and RES integration as DC islanded microgrids (DC ImGs) has attracted the attention of many researchers. However, DC ImGs face many challenges, and voltage stability is extremely critical for efficient power distribution. This challenge becomes more prominent when exogenous disturbances, as well as time-delay, exist in the system mainly because of the communication network. In this study, we develop a mathematical model of the time-delay DC ImG. To compensate for the effect of the time-delay, three control strategies are introduced-stabilizing, robust, and robust-predictor. The controller's stability is guaranteed based on the Lyapunov-Krasovskii theorem, whereas for the exogenous disturbance rejection, the $\mathcal(L)_2$ -norm of the system is reduced. Furthermore, to obtain the proposed controllers' gains, linear-matrix-inequality constraints are formulated. The performances of the controllers are investigated through numerous simulations, and a detailed analysis is presented.
 
 ## Getting Started
 [YALMIP](https://yalmip.github.io/) and [MOSEK](https://www.mosek.com/) tolbox for [MATLAB](https://www.mathworks.com/?s_tid=gn_logo) is required to run the code.
