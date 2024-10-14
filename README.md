@@ -10,6 +10,7 @@ In recent years, the application of renewable energy resources (RES) with DC out
 * Run `mosekdiag` to check correct installation of MOSEK.
 
 ## Code Structure
+### TDS_Stablizing_Robust
 * `Four_DGU_Output_Feedback_Uncertainty.m`: Main simulation file for the research paper.
 * `Four_DGU_Uncertainty_data_5pct.m`: DC ImG nominal parameters and with 5% uncertainity radius.
 * `DGU_parameters_Taxas_Inst.m`: Boost converter parameters calculated from Taxas Instruments Application 
@@ -18,7 +19,11 @@ In recent years, the application of renewable energy resources (RES) with DC out
 * `Decentralized_Four_DGU.m': Dentralized LQR controller for comparison.
 * `Plot_Vt_ALL_Output_Feedback_mFile_Cent.m`: Plot of the case *Vref change*.
 * `Plot_Load_Output_Feedback_mFile_Cent.m` : Plot of the case *Load disturbance*.
-* `Plot_Vin_Dist_Four_DGU_Output_Feedback_Uncertainty.m`: Plot of the case *Vin disturbance*. 
+* `Plot_Vin_Dist_Four_DGU_Output_Feedback_Uncertainty.m`: Plot of the case *Vin disturbance*.
+### TDS_Robust_H_infinty
+* abc
+### TDS_Predictor_Based
+* abc
 
 ## MATLAB Data Files
 * `VinSingnals.mat`: Boost converters input voltage signals.
