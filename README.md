@@ -1,5 +1,5 @@
 # Robust Centralized Control for DC Islanded Microgrid Considering Communication Network Delay
-[IEEE Access, *Vol: 9*, *April 23, 2020*]([https://doi.org/10.1177/0142331219884804](https://doi.org/10.1109/ACCESS.2020.2989777))
+[IEEE Access, *Vol: 9*, *April 23, 2020*](https://doi.org/10.1109/ACCESS.2020.2989777)
 
 ## Abstract
 In recent years, the application of renewable energy resources (RES) with DC output has increased, and RES integration as DC islanded microgrids (DC ImGs) has attracted the attention of many researchers. However, DC ImGs face many challenges, and voltage stability is extremely critical for efficient power distribution. This challenge becomes more prominent when exogenous disturbances, as well as time-delay, exist in the system mainly because of the communication network. In this study, we develop a mathematical model of the time-delay DC ImG. To compensate for the effect of the time-delay, three control strategies are introduced-stabilizing, robust, and robust-predictor. The controller's stability is guaranteed based on the Lyapunov-Krasovskii theorem, whereas for the exogenous disturbance rejection, the $\mathcal(L)_2$ -norm of the system is reduced. Furthermore, to obtain the proposed controllers' gains, linear-matrix-inequality constraints are formulated. The performances of the controllers are investigated through numerous simulations, and a detailed analysis is presented.
@@ -10,37 +10,39 @@ In recent years, the application of renewable energy resources (RES) with DC out
 * Run `mosekdiag` to check correct installation of MOSEK.
 
 ## Code Structure
-### TDS_Stablizing_Robust
-* `Four_DGU_Output_Feedback_Uncertainty.m`: Main simulation file for the research paper.
-* `Four_DGU_Uncertainty_data_5pct.m`: DC ImG nominal parameters and with 5% uncertainity radius.
-* `DGU_parameters_Taxas_Inst.m`: Boost converter parameters calculated from Taxas Instruments Application 
- Report SLVA372C–November 2009–Revised January 2014.
-* `LQR_Centralized.m`: Centralized LQR controller for comparison.
-* `Decentralized_Four_DGU.m': Dentralized LQR controller for comparison.
-* `Plot_Vt_ALL_Output_Feedback_mFile_Cent.m`: Plot of the case *Vref change*.
-* `Plot_Load_Output_Feedback_mFile_Cent.m` : Plot of the case *Load disturbance*.
-* `Plot_Vin_Dist_Four_DGU_Output_Feedback_Uncertainty.m`: Plot of the case *Vin disturbance*.
-### TDS_Robust_H_infinty
-* abc
-### TDS_Predictor_Based
-* abc
-
-## MATLAB Data Files
-* `VinSingnals.mat`: Boost converters input voltage signals.
-* `XOutput_Vt.mat`: DC ImG states, proposed output-feedback controller *Voltage tracking*.
-* `XOutput_Load.mat`: DC ImG states, proposed output-feedback controller *Load disturbance*.
-* `XOutput_Vin.mat`: DC ImG states, proposed output-feedback controller *Vin disturbances*.
-* `Xdecent_Vt.mat`: DC ImG states, decentralized controller with *Voltage tracking*.
-* `Xdecent_Load.mat`: DC ImG states, decentralized controller with *Load distrubance*.
-* `Xdecent_Vin.mat`: DC ImG states, decentralized controller with *Vin disturbance*.
-* `Xlqr_Vt.mat`: DC ImG states, centralized LQR controller with *Voltage tracking*.
-* `Xlqr_Load.mat`: DC ImG states, centralized LQR controller with *Load distrubance*.
-* `Xlqr_Vin.mat`: DC ImG states, centralized LQR controller with *Vin disturbance*.
+* `simulate_and_plot_all_cases.m`: Main simulation file for the research paper.
+* `set_current_path.m`: To smoothly run MATLAB files without having path issues.
+### src
+* `design_stablizing_tds_controller.m`: Designing the *stablizing* controller (III. A. paper)l
+* `design_robust_tds_controller.m`: Designing the *robust* controller (III. B. paper).
+* `design_predictor_tds_controller.m`: Designing the *predictor-feedback robust* controller (III. C. paper).
+* `simulate_stablizing_tds_controller.m`: Single case simulation setup.
+* `simulate_robust_tds_controller.m`: Single case simulation setup.
+* `simulate_predictor_tds_controller.m`: Single case simulation setup.
+* `multi_case_simulation_tds_stablizing.m`: Multi case simulation setup.
+* `multi_case_simulation_tds_robust.m`: Multi case simulation setup.
+* `multi_case_simulation_tds_predictor.m`: Multi case simulation setup.
+* `dgu_parameter_calculation.m`: *DGU* parameters calculation (TABLE 1. paper).
+* `dcimg_network_configuration.m`: *DC ImG* with six DGUs, network configuration (FIGURE 4. paper).
+* `set_current_path.m`: To smoothly run MATLAB files without having path issues.
+### subplots
+* `subplot_case_load_dist_tds_stablizing.m`: A subplot of FIGURE 6 & 7.
+* `subplot_case_load_dist_tds_robust.m`: A subplot of FIGURE 6 & 7.
+* `subplot_case_load_dist_tds_predictor.m`: A subplot of FIGURE 6 & 7.
+* `subplot_case_vin_dist_tds_stablizing.m`: A subplot of FIGURE 8.
+* `subplot_case_vin_dist_tds_robust.m`: A subplot of FIGURE 8.
+* `subplot_case_vin_dist_tds_predictor.m`: A subplot of FIGURE 8.
+* `set_current_path.m`: To smoothly run MATLAB files without having path issues.
+### data
+#### vin_signal
+* `VinSignals_1min_5e5.mat`: Pre-generated Vin_i disturbances signals with dt = 5e-5.
+* `VinSignals_1min_10e5.mat`: Pre-generated Vin_i disturbances signals with dt = 10e-5.
+#### simulation_result
+All the simulation results generated is saved here.
 
 
 ## Key Features
-* **Run experiments**: Run `Four_DGU_Output_Feedback_Uncertainty.m` to reproduce experiments from the paper.
-* **Visualize results**: Run `Plot_xyz.m` to observe the results.
+* **Run experiments and visualize**: Run `simulate_and_plot_all_cases.m` to reproduce experiments from the paper.
 
 ## Note
-The comparision models of **LQR** and **Decentralized** controllers are not provided. Only the resuls of the simulation is provided here for plotting purposes
+The 
