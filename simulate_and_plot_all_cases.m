@@ -11,11 +11,24 @@ clear all; close all; clc;
 %% ---- Set Path
 set_current_path;
 
+%% ---- Check folder for the simulation
+
+folderName = 'data/simulation_result';  % Specify the folder name you want to check or create
+
+% Check if the folder exists
+if ~exist(folderName, 'dir')
+    % If the folder does not exist, create it
+    mkdir(folderName);
+    disp(['Folder "', folderName, '" created.']);
+else
+    disp(['Folder "', folderName, '" already exists.']);
+end
+
 %% ---- Time-Delay-System Simulations
 
-% run('src/multi_case_simulation_tds_stablizing');
-% run('src/multi_case_simulation_tds_robust');
-% run('src/multi_case_simulation_tds_predictor');
+run('src/multi_case_simulation_tds_stablizing');
+run('src/multi_case_simulation_tds_robust');
+run('src/multi_case_simulation_tds_predictor');
 
 %% ---- FIGURE 6:
 i = 1;
