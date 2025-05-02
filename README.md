@@ -13,14 +13,14 @@ In recent years, the application of renewable energy resources (RES) with DC out
 
 ## Getting Started
 [YALMIP](https://yalmip.github.io/) and [MOSEK](https://www.mosek.com/) tolbox for [MATLAB](https://www.mathworks.com/?s_tid=gn_logo) is required to run the code.
-* Run `yalmiptest` to check correct installation of YALMIP.
-* Run `mosekdiag` to check correct installation of MOSEK.
+* Run `yalmiptest` to check correct installation of _YALMIP_.
+* Run `mosekdiag` to check correct installation of _MOSEK_.
 
 ## Code Structure
 * `simulate_and_plot_all_cases.m`: Main simulation file for the research paper.
 * `set_current_path.m`: To smoothly run MATLAB files without having path issues.
 ### src
-* `design_stablizing_tds_controller.m`: Designing the *stablizing* controller (III. A. paper)l
+* `design_stablizing_tds_controller.m`: Designing the *stablizing* controller (III. A. paper).
 * `design_robust_tds_controller.m`: Designing the *robust* controller (III. B. paper).
 * `design_predictor_tds_controller.m`: Designing the *predictor-feedback robust* controller (III. C. paper).
 * `simulate_stablizing_tds_controller.m`: Single case simulation setup.
@@ -42,8 +42,8 @@ In recent years, the application of renewable energy resources (RES) with DC out
 * `set_current_path.m`: To smoothly run MATLAB files without having path issues.
 ### data
 #### vin_signal
-* `VinSignals_1min_5e5.mat`: Pre-generated Vin_i disturbances signals with dt = 5e-5.
-* `VinSignals_1min_10e5.mat`: Pre-generated Vin_i disturbances signals with dt = 10e-5.
+* `VinSignals_1min_5e5.mat`: Pre-generated $Vin_i$ disturbances signals with $dt = 5e-5$.
+* `VinSignals_1min_10e5.mat`: Pre-generated $Vin_i$ disturbances signals with $dt = 10e-5$.
 #### simulation_result
 All the simulation results generated is saved in the directory ..\data\simulation_results.
 
